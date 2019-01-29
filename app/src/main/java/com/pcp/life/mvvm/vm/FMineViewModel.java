@@ -103,7 +103,7 @@ public class FMineViewModel extends BaseViewModel {
                 //ToastUtils.showShort("github");
                 Intent intent = new Intent();
                 intent.setAction("android.intent.action.VIEW");
-                Uri content_url = Uri.parse("https://www.baidu.com");
+                Uri content_url = Uri.parse("https://github.com/panchaopeng/BookMovie/blob/master/app/src/main/app.apk");
                 intent.setData(content_url);
                 AppManager.getAppManager().currentActivity().startActivity(intent);
             }
