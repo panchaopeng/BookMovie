@@ -22,7 +22,7 @@
 ![image](https://github.com/panchaopeng/VideoStorege/blob/master/1_BookMovie/8_albumError_flash.gif)
 ### 6.使用Glide加载图片(Glide4.8.0)
 #### 清除Glide图片缓存，[glide工具类](https://github.com/panchaopeng/BookMovie/tree/master/app/src/main/java/com/pcp/life/utils/glide)
-
+![image](https://github.com/panchaopeng/VideoStorege/blob/master/1_BookMovie/9_customTab_selected.gif)
 
 
 
