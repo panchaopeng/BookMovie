@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">享阅</string>
+    <string name="book">图书</string>
+    <string name="movie">电影</string>
+    <string name="music">音乐</string>
+    <string name="cart">购物车</string>
+    <string name="mine">我的</string>
+    <string name="loading">加载中</string>
+    <string name="scan_code">扫码</string>
+    <string name="test">测试</string>
+    <string name="hint_book_search">书名、作者、ISBN</string>
+    <string name="title_book_search">搜索</string>
+    <string name="bool_menu_search">搜索</string>
+    <string name="book_menu_setting">设置</string>
+
+    <!--二级BookFragmnet-->
+    <string name="second_book_popular">流行</string>
+    <string name="second_book_culture">文化</string>
+    <string name="second_book_life">生活</string>
+    <string name="second_book_technology">科技</string>
+    <string name="book_title">标题</string>
+    <string name="item_concact"> / </string>
+
+
+    <!--登录注册-->
+    <string name="username">用户</string>
+    <string name="password">密码</string>
+    <string name="forgot_your_password">忘记密码?</string>
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+
+    <!-- 图书详细信息 -->
+    <string name="author">作者: </string>
+    <string name="publisher">出版社: </string>
+    <string name="originTitle">原作名: </string>
+    <string name="translator">译者: </string>
+    <string name="pubdate">出版年: </string>
+    <string name="pages">页数: </string>
+    <string name="price">价格: </string>
+    <string name="binding">装帧: </string>
+    <string name="isbn13">ISBN: </string>
+
+    <!--二维码标题-->
+    <string name="scan_title">扫描二维码/一维码</string>
+    <string name="tips_scan_code">扫描图书的ISBN码/关键词</string>
+    <string name="hint_movie_search">搜索电影</string>
+
+    <!-- mineFragment -->
+    <string name="exit">退出</string>
+
+</resources>

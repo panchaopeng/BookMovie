@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="movieDetailVM"
+            type="com.pcp.life.mvvm.vm.item_vm.movie.RecycleDirectorItemVM" />
+    </data>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/five_dp">
+
+    <ImageView
+        urlCustom="@{movieDetailVM.movieItem.url}"
+        android:layout_width="@dimen/culture_book_width"
+        android:layout_height="@dimen/culture_book_height"/>
+
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="@{movieDetailVM.movieItem.name}"
+        android:padding="@dimen/five_dp"
+        android:textSize="@dimen/sp_one_two"
+        android:textColor="@color/black"
+        android:layout_width="@dimen/culture_book_width"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+</layout>

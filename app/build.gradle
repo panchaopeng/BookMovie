@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.pcp.life"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //    开启Lambda
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+//    开启databinding
+    dataBinding {
+        enabled true
+    }
+
+    //在layout文件夹下建立子文件夹
+    //注意：每新建一个子目录，就需要添加一行类似'src/main/res/layout/home',的代码。
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layout/item_second_movie',
+                            'src/main/res/layout/item_second_book',
+                            'src/main/res/layout/fragment_second_book',
+                            //下面两个是固定兼容写法
+                            'src/main/res/layout',
+                            'src/main/res'
+                    ]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //一些Android Studio兼容库
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    //okgo核心
+    implementation 'com.lzy.net:okgo:3.0.4'
+    //okrx2是基于RxJava2的扩展
+    implementation 'com.lzy.net:okrx2:2.0.2'
+    //okserver是对okgo的扩展,包括上传和下载
+    implementation 'com.lzy.net:okserver:2.0.5'
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.0'
+    //http status
+    implementation 'com.readystatesoftware.chuck:library:1.0.4'
+    //ButterKnife
+    implementation 'com.jakewharton:butterknife:9.0.0-rc2'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc2'
+    //loading加载
+    implementation 'com.wang.avi:library:2.1.3'
+    //tablayout
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //图片加载 Glide
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //RatingBar
+    implementation 'me.zhanghai.android.materialratingbar:library:1.3.1'
+    //RecycleView
+    //implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
+    //SmartRefreshLayout 下拉刷新 上拉加载
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    //没有使用特殊Header，可以不加这行
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'
+    //Search
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+    //扫码
+    implementation 'com.king.zxing:zxing-lite:1.0.4'
+    //今日头条屏幕适配
+    implementation 'me.jessyan:autosize:1.1.2'
+    //MVVM模式开发
+    implementation 'com.github.goldze:MVVMHabit:3.0.7'
+    //superTextView
+    implementation 'com.github.lygttpod:SuperTextView:2.1.8'
+}

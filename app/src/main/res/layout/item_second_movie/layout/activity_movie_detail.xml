@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+        <import type="android.support.v7.widget.LinearLayoutManager" />
+
+        <variable
+            name="movieDetailVM"
+            type="com.pcp.life.mvvm.vm.activity_vm.MovieDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- toolbar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
+
+            <ImageView
+                onClickCommand="@{movieDetailVM.finish}"
+                android:layout_width="@dimen/img_back"
+                android:layout_height="@dimen/img_back"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/ten_five_dp"
+                android:src="@drawable/vector_drawable_left_arrow" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:text="@{movieDetailVM.title}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_one_two" />
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/five_dp">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <!--基本信息-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        urlCustom="@{movieDetailVM.movieDetail.images.medium}"
+                        android:layout_width="@dimen/detail_book_width"
+                        android:layout_height="@dimen/detail_book_height" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/five_dp">
+
+                        <TextView
+                            android:text="@{movieDetailVM.directors}"
+                            style="@style/book_detail"
+                            android:textColor="@color/black2" />
+
+                        <TextView
+                            android:text="@{movieDetailVM.genres}"
+                            style="@style/book_detail"
+                            android:textColor="@color/light_black" />
+
+                        <TextView
+                            android:text="@{movieDetailVM.countries}"
+                            style="@style/book_detail"
+                            android:textColor="@color/light_black" />
+
+                        <TextView
+                            android:text="@{movieDetailVM.year}"
+                            style="@style/book_detail"
+                            android:textColor="@color/light_black" />
+
+                        <TextView
+                            android:text="@{movieDetailVM.aka}"
+                            style="@style/book_detail"
+                            android:textColor="@color/light_black" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--主演列表-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@{movieDetailVM.static_director}"
+                        style="@style/book_detail"
+                        android:gravity="center"
+                        android:padding="@dimen/five_dp"
+                        android:textColor="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/casts"
+                    adapter="@{movieDetailVM.adapter}"
+                    itemBinding="@{movieDetailVM.itemBinding}"
+                    items="@{movieDetailVM.observableList}"
+                    layoutManager="@{LayoutManagers.staggeredGrid(1,LinearLayoutManager.HORIZONTAL)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <!--内容简介-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="@{movieDetailVM.static_summary}"
+                        style="@style/book_detail"
+                        android:gravity="center"
+                        android:padding="@dimen/five_dp"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:text="@{movieDetailVM.summary}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/five_dp"
+                        android:textColor="@color/light_black" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="popularItem"
+            type="com.pcp.life.mvvm.vm.item_vm.book.RecycleBookItemVM" />
+    </data>
+
+    <LinearLayout xmlns:binding="http://schemas.android.com/apk/res-auto"
+        binding:onClickCommand="@{popularItem.itemClick}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/border_one_px"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/five_dp">
+
+        <ImageView
+            android:layout_width="@dimen/five_four_dp"
+            android:layout_height="@dimen/eight_zero_dp"
+            urlCustom="@{popularItem.bookInfo.images.small}" />
+
+        <!-- android:layout_height="@dimen/eight_zero_dp" -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/five_dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{popularItem.bookInfo.title}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_one_two" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/three_dp"
+                android:orientation="horizontal">
+
+                <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                    style="@style/Widget.MaterialRatingBar.RatingBar.Indicator.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rating="@{popularItem.rating}"
+                    android:progressTint="@color/colorPrimary"
+                    android:stepSize="0.01" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/five_dp"
+                    android:text="@{String.valueOf(popularItem.bookInfo.rating.average)}"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/sp_one_two" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/three_dp"
+                android:text="@{popularItem.concactText}"
+                android:textColor="@color/light_black"
+                android:textSize="@dimen/main_text_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

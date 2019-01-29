@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <SurfaceView
+        android:id="@+id/preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.king.zxing.ViewfinderView
+        android:id="@+id/viewfinder_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cornerColor="#FF1FB3E2"
+        app:frameColor="#7F1FB3E2"
+        app:labelText="@string/tips_scan_code"
+        app:labelTextColor="#FFC0C0C0"
+        app:labelTextLocation="bottom"
+        app:labelTextPadding="@dimen/five_dp"
+        app:labelTextSize="@dimen/size_14sp"
+        app:laserColor="#FF1FB3E2"
+        app:maskColor="@color/scan_outside"
+        app:resultPointColor="#C0EFBD21" />
+
+    <!--ToolBar-->
+    <RelativeLayout
+        android:id="@+id/scan_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/relative_toolbar_height"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/five_dp">
+
+        <ImageView
+            android:id="@+id/scan_finish"
+            style="@style/scan_bottom_img"
+            android:layout_width="@dimen/relative_toolbar_img"
+            android:layout_height="@dimen/relative_toolbar_img"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/ten_five_dp"
+            android:src="@drawable/vector_drawable_left_arrow" />
+
+        <TextView
+            android:id="@+id/scan_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/scan_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_text_size" />
+
+    </RelativeLayout>
+
+    <!--开灯设置-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/relative_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <LinearLayout style="@style/scan_bottom_linear">
+
+            <ImageView
+                android:id="@+id/scan_album"
+                style="@style/scan_bottom_img"
+                android:background="@drawable/selector_album_state" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/scan_bottom_linear">
+
+            <ImageView
+                android:id="@+id/scan_flash"
+                style="@style/scan_bottom_img"
+                android:background="@drawable/selector_flash_state" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
+

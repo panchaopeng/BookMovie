@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+        <import type="android.support.v7.widget.LinearLayoutManager" />
+
+        <variable
+            name="recentMovieVM"
+            type="com.pcp.life.mvvm.vm.second_vm.movie.SCMovie_RecentViewModel" />
+    </data>
+<LinearLayout
+    android:background="@color/book_fragment_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/recentMovie_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--  去掉自动生成的下划线 lineManager="@{LineManagers.vertical()}"，-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recentMovie_recycle"
+            adapter="@{recentMovieVM.adapter}"
+            itemBinding="@{recentMovieVM.itemBinding}"
+            items="@{recentMovieVM.observableList}"
+            layoutManager="@{LayoutManagers.staggeredGrid(2,LinearLayoutManager.VERTICAL)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>
+</layout>

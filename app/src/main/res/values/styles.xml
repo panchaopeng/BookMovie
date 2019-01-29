@@ -1,0 +1,133 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="autoCompleteTextViewStyle">@style/AppAutoCompleteTextView</item>
+    </style>
+
+    <!--修改searchView字体颜色、大小-->
+    <style name="AppAutoCompleteTextView" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textColorHighlight">@color/gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAppearance">@style/AutoCompleteTextAppearance</item>
+    </style>
+
+    <!-- BookFragment的toolbar提示文字颜色 -->
+    <style name="AutoCompleteTextAppearance" parent="android:TextAppearance">
+        <item name="android:textColor">@color/light_black</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textColorHighlight">@color/gray</item>
+    </style>
+
+    <!-- 自定义dialog的样式 -->
+    <style name="CustomDialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <!-- <item name="android:windowBackground">@drawable/dialog_custom_bg</item>背景透明-->
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+        <!--<item name="android:backgroundDimAmount">0.6</item>&lt;!&ndash;模糊值&ndash;&gt;-->
+    </style>
+
+    <style name="book_detail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_one_two</item>
+    </style>
+
+
+    <style name="img_scan">
+        <item name="android:layout_marginLeft">@dimen/ten_five_dp</item>
+        <item name="android:layout_marginRight">@dimen/ten_five_dp</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+    </style>
+
+    <style name="BookSearch">
+        <!-- Background for the search bar -->
+        <item name="searchBackground">@color/white</item>
+
+        <!-- Change voice icon -->
+        <item name="searchVoiceIcon">@drawable/vector_drawable_search_left</item>
+
+        <!-- Change clear text icon -->
+        <item name="searchCloseIcon">@drawable/vector_drawable_search_clear</item>
+
+        <!-- Change up icon -->
+        <item name="searchBackIcon">@drawable/vector_drawable_search_left</item>
+
+        <!-- Change icon for the suggestions -->
+        <item name="searchSuggestionIcon">@drawable/ic_suggestion</item>
+
+        <!-- Change background for the suggestions list view -->
+        <item name="searchSuggestionBackground">@android:color/white</item>
+
+        <!-- Change text color for edit text. This will also be the color of the cursor -->
+        <item name="android:textColor">@color/black2</item>
+
+        <!-- Change hint text color for edit text -->
+        <item name="android:textColorHint">@color/gray</item>
+
+        <!-- Hint for edit text -->
+        <!--<item name="android:hint">@string/hint_book_search</item>-->
+    </style>
+
+    <style name="scan_bottom_linear">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/relative_bottom_height</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="scan_bottom_img">
+        <item name="android:clickable">true</item>
+        <item name="android:onClick">OnClick</item>
+        <item name="android:layout_width">@dimen/relative_bottom_img</item>
+        <item name="android:layout_height">@dimen/relative_bottom_img</item>
+    </style>
+
+    <style name="Translucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">#0288D1</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+    <style name="TextLabel" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlActivated">#FFCC00</item>
+    </style>
+
+    <style name="login_linear">
+        <item name="android:padding">@dimen/five_dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="login_img_icon">
+        <item name="android:layout_width">@dimen/login_img_size</item>
+        <item name="android:layout_height">@dimen/login_img_size</item>
+    </style>
+
+    <style name="login_et">
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/login_text_size</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <!--边框的颜色-->
+            <solid android:color="@color/fragment_background" />
+        </shape>
+    </item>
+
+    <!--这里有四个方向可以选择，这里因为只要显示顶部边框，所以就设置top-->
+    <item
+        android:top="1px">
+        <shape>
+            <!--整个空间的背景颜色-->
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+
+</layer-list>

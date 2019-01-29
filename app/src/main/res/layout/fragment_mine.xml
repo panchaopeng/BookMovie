@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fMine"
+            type="com.pcp.life.mvvm.vm.FMineViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/book_fragment_bg">
+
+
+        <!-- 用户头像 -->
+        <LinearLayout
+            android:id="@+id/linear_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/container_avatar"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/ten_five_dp">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="@dimen/mine_avatar"
+                android:layout_height="@dimen/mine_avatar" />
+
+        </LinearLayout>
+
+        <!-- 设置选项 -->
+        <LinearLayout
+            android:layout_below="@+id/linear_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.allen.library.SuperTextView
+                android:id="@+id/version"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item"
+                app:sLeftIconRes="@drawable/vector_drawable_blue_version"
+                app:sLeftTextString="版本"
+                app:sRightIconRes="@drawable/vector_drawable_right_arrow"
+                app:sRightTextString="1.0" />
+
+            <com.allen.library.SuperTextView
+                android:id="@+id/cache"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item"
+                app:sLeftIconRes="@drawable/vector_drawable_greendark_cache"
+                app:sLeftTextString="缓存"
+                app:sRightIconRes="@drawable/vector_drawable_right_arrow" />
+
+            <com.allen.library.SuperTextView
+                android:id="@+id/github"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item"
+                app:sLeftIconRes="@drawable/vector_drawable_blue_url"
+                app:sLeftTextString="GitHub"
+                app:sRightIconRes="@drawable/vector_drawable_right_arrow" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_margin="@dimen/two_five_dp"
+            android:text="退出APP"
+            android:layout_alignParentBottom="true"
+            android:textColor="@drawable/selector_text_color"
+            android:background="@drawable/selector_bg_button"
+            android:textSize="@dimen/login_go_size"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_img_go" />
+
+    </RelativeLayout>
+</layout>

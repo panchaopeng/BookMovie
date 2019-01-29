@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            type="com.pcp.life.mvvm.vm.activity_vm.LoginViewModel"
+            name="login" />
+    </data>
+
+<ScrollView
+    android:scrollbars="none"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <!--父布局垂直居中-->
+        <LinearLayout
+            android:gravity="center"
+            android:padding="@dimen/dp_two_ten"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--填写用户名-->
+            <LinearLayout
+                android:background="@drawable/selector_linear_radius"
+                style="@style/login_linear">
+
+                <ImageView
+                    android:src="@drawable/vector_drawable_login_blue"
+                    style="@style/login_img_icon" />
+
+                <EditText
+                    binding:onFocusChangeCommand="@{login.focusUserName}"
+                    android:text="@={login.etUserName}"
+                    android:id="@+id/username"
+                    android:hint="@string/username"
+                    style="@style/login_et" />
+
+                <ImageView
+                    android:visibility="@{login.clearVisible}"
+                    android:id="@+id/login_img_clear"
+                    binding:onClickCommand="@{login.clearCommand}"
+                    android:src="@drawable/vector_drawable_clear_gray"
+                    android:layout_width="@dimen/login_img_clear_size"
+                    android:layout_height="@dimen/login_img_clear_size" />
+
+            </LinearLayout>
+
+
+            <!--填写密码-->
+            <LinearLayout
+                android:background="@drawable/selector_linear_radius_no_top"
+                style="@style/login_linear">
+
+                <ImageView
+                    android:src="@drawable/vector_drawable_password_blue"
+                    style="@style/login_img_icon" />
+
+                <EditText
+                    binding:onFocusChangeCommand="@{login.focusPassword}"
+                    android:text="@={login.etPassword}"
+                    android:id="@+id/password"
+                    android:inputType="textPassword"
+                    android:hint="@string/password"
+                    style="@style/login_et" />
+
+                <ImageView
+                    android:id="@+id/img_login_eye"
+                    binding:onClickCommand="@{login.passwordCommand}"
+                    android:src="@drawable/vector_drawable_login_unlook"
+                    android:layout_width="@dimen/login_img_clear_size"
+                    android:layout_height="@dimen/login_img_clear_size" />
+
+            </LinearLayout>
+
+            <Button
+                binding:onClickCommand="@{login.loginCommand}"
+                android:layout_margin="@dimen/ten_dp"
+                android:text="@string/login"
+                android:textColor="@drawable/selector_text_color"
+                android:background="@drawable/selector_bg_button"
+                android:textSize="@dimen/login_go_size"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_img_go" />
+
+        </LinearLayout>
+
+</ScrollView>
+
+</layout>

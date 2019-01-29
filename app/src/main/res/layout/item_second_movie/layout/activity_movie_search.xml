@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+        <import type="android.support.v7.widget.LinearLayoutManager" />
+
+        <variable
+            name="movieSearchVM"
+            type="com.pcp.life.mvvm.vm.activity_vm.MovieSearchViewModel" />
+    </data>
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/book_fragment_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--ToolBar-->
+        <FrameLayout
+            android:id="@+id/toolbar_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:titleTextColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary" />
+
+            <com.miguelcatalan.materialsearchview.MaterialSearchView
+                android:id="@+id/movieSearchView"
+                style="@style/BookSearch"
+                android:hint="@string/hint_movie_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+
+        <!--data-->
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/movieSearchRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 去掉自动生成的下划线lineManager="@{LineManagers.vertical()}" -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/movieSearchRecycle"
+                adapter="@{movieSearchVM.adapter}"
+                itemBinding="@{movieSearchVM.itemBinding}"
+                items="@{movieSearchVM.observableList}"
+                layoutManager="@{LayoutManagers.staggeredGrid(2,LinearLayoutManager.VERTICAL)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

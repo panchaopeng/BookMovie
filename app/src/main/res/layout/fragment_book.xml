@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fBook"
+            type="com.pcp.life.mvvm.vm.FBookViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/img_scan"
+                android:src="@drawable/vector_drawable_scan_blue" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/five_dp"
+                android:layout_marginRight="@dimen/five_dp"
+                android:layout_weight="1"
+                android:background="@drawable/radius"
+                android:gravity="center"
+                android:padding="@dimen/five_dp"
+                android:text="@string/hint_book_search"
+                android:textSize="@dimen/sp_14"
+                app:onClickCommand="@{fBook.bookSearchCommand}" />
+
+            <ImageView
+                style="@style/img_scan"
+                android:src="@drawable/vector_drawable_scan_white"
+                app:onClickCommand="@{fBook.scanCommand}" />
+
+        </LinearLayout>
+
+        <!-- tablayout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 数据 -->
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/book_sliding_tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/colorPrimary"
+                app:tl_indicator_color="@color/white"
+                app:tl_indicator_height="1.5dp"
+                app:tl_indicator_width_equal_title="true"
+                app:tl_tab_space_equal="true"
+                app:tl_textSelectColor="@color/white"
+                app:tl_textUnselectColor="@color/db"
+                app:tl_textsize="14dp" />
+
+            <!-- 分割线 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/five_dp"
+                android:background="@color/colorPrimary" />
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/book_ViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

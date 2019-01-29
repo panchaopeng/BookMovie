@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="main"
+            type="com.pcp.life.mvvm.vm.activity_vm.MainViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:id="@+id/main_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+           <com.pcp.life.widget.BottomBar
+               android:background="@drawable/main_bottom_border"
+               android:id="@+id/bottom_bar"
+               android:layout_gravity="bottom"
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/main_bottom_height" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>
