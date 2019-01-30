@@ -21,10 +21,12 @@
 #### 自定义扫描界面，扫描二维码、一维码。还可以本地解析图片及打开灯光。
 ![image](https://github.com/panchaopeng/VideoStorege/blob/master/1_BookMovie_GIF/4_4_scan.gif)
 ![image](https://github.com/panchaopeng/VideoStorege/blob/master/1_BookMovie_GIF/4_5_album.gif)
-### 6.使用Glide加载图片(Glide4.8.0)
+### 6.使用Glide加载图片及BottomBar选择监听(Glide4.8.0)
 #### 清除Glide图片缓存，[glide工具类](https://github.com/panchaopeng/BookMovie/tree/master/app/src/main/java/com/pcp/life/utils/glide)
 ![image](https://github.com/panchaopeng/VideoStorege/blob/master/1_BookMovie_GIF/5_glide.gif)
-
+# 结尾
+## PS：该小项目在Windows AndroidStudio 3.3开发，导入项目时请注意AS版本问题。
+## GIF录制工具：[TeamViewer](https://www.teamviewer.com/cn/download) + [ScreenToGif](https://github.com/NickeManarin/ScreenToGif)
 
 
 
