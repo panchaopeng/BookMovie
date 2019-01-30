@@ -1,6 +1,6 @@
 # 享阅 [APK下载](https://github.com/panchaopeng/BookMovie/blob/master/app/src/main/app.apk)
 ## 一个查看或查找图书、电影动态信息的小APP。数据源于豆瓣开放API。
-### 采用MVVM模式([MVVMHabit框架](https://github.com/goldze/MVVMHabit))，单Activity多Fragment架构。
+### 采用MVVM模式([MVVMHabit框架](https://github.com/goldze/MVVMHabit))，单Activity多Fragment架构。最低版本采用Android 5.0，APP内的所有图标都为SVG。[SVG2VectorDrawable](https://github.com/misakuo/svgtoandroid)
 ### 集成众多优秀的开源项目：查看列表[build.gradle](https://github.com/panchaopeng/BookMovie/blob/master/app/build.gradle)
 ### 0.修改第三方底部导航[BottomBar](https://github.com/panchaopeng/BookMovie/blob/master/app/src/main/java/com/pcp/life/widget/BottomBar.java)，链式调用的同时还能监听选择的Tab。
 ![image](https://github.com/panchaopeng/VideoStorege/blob/master/1_BookMovie_GIF/6_BottomBar.gif)
