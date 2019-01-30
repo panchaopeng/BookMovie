@@ -26,7 +26,7 @@
 ![image](https://github.com/panchaopeng/VideoStorege/blob/master/1_BookMovie_GIF/5_glide.gif)
 # 结尾
 ## PS：该小项目在Windows AndroidStudio 3.3开发，导入项目时请注意AS版本问题。
-## GIF录制工具：[TeamViewer](https://www.teamviewer.com/cn/download) + [ScreenToGif](https://github.com/NickeManarin/ScreenToGif)
+## Windows + Android的GIF录制工具：[TeamViewer](https://www.teamviewer.com/cn/download) + [ScreenToGif](https://github.com/NickeManarin/ScreenToGif)
 
 
 
