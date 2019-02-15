@@ -61,7 +61,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 .setIconHeight(32)
                 .setTitleSize(12)
                 .setTitleIconMargin(3)
-                .setTitleBeforeAndAfterColor("#8a8a8a", "#1296db")
+                .setTitleBeforeAndAfterColor(
+                        "#8a8a8a",
+                        "#1296db")
                 .addItem(BookFragment.class,
                         "图书",
                         R.drawable.vector_drawable_book_normal,
@@ -77,7 +79,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 .setFirstChecked(0)
                 .selectedListener(new BottomBar.IOnTabSelected() {
                     @Override
-                    public void onTabSelectedAfterInit(int position, Fragment fragment) {
+                    public void onTabSelectedAfterInit(int position,Fragment fragment) {
                         if (position == 2){
                             ((MineFragment)fragment).updateGlideCache();
                         }
